@@ -3,8 +3,14 @@
 <%= @zombie.graveyard %>
 <hr>
 <h3>Tweets:</h3>
-<% @zombie.tweets.each do |tweet|%>
-	<p><%= tweet.status%></p>
+<% @zombie.tweets.each do |tweet| %>
+	<p> <%= tweet.status %> </p>
+	<p> <%= time_ago_in_words tweet.created_at %> </p>
+	<p> <%= link_to "Delete tweet", [@zombie, tweet], :method => :delete, :confirm => "Are u sure?" %></p>
 <% end %>
 
-<%= link_to "Add comment", new_tweet_path  %>
+
+<%= form_for [@zombie, @zombie.tweets.build] do |f| %>
+	<p><%= f.text_field :status %></p>
+	<p><%= f.submit "Add tweet" %>
+<%end%>

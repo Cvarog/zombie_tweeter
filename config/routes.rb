@@ -1,7 +1,11 @@
 BlogMyself::Application.routes.draw do
+  get "comments/create"
 
-  resources :zombies
-  resources :tweets
+  get "comments/destroy"
+  
+  resources :zombies do
+    resources :tweets
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

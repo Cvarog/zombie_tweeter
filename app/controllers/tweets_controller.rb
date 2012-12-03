@@ -1,19 +1,20 @@
 class TweetsController < ApplicationController
 
-	def show
 
-	end
-
-	def new
-		@tweet = Tweet.new
-	end
 
 	def create
-		@tweet = Tweet.create(params[:status => params[:status], :post_id => params[:id]])
-		redirect_to "/zombies", :notice => params
-	end
+	@zombie = Zombie.find(params[:zombie_id])
+  	@tweet = @zombie.tweets.build(:status => params[:tweet], :zombie_id => params[:zombie_id])
+  	redirect_to @tweet.zombie, :notice => params
 
-	def index
+  	end
+
+	def destroy
+	@tweet = Tweet.find(params[:id]) 
+  	@tweet.destroy
+
+  	redirect_to @tweet.zombie
+
 
 	end
 
