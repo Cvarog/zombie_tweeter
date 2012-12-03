@@ -1,0 +1,6 @@
+<h2>Add a new Tweet</h2>
+<%= form_for @tweet do |f|%>
+	<%= f.label :status %>:
+	<%= f.text_field :status %></br>
+    <%= f.submit "Add tweet" %>
+<% end %>

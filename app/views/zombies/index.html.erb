@@ -1,0 +1,14 @@
+<h1 align="center">Zombies</h1>
+<table align="center" border=0>
+
+<% @zombies.each do |zombie|%>
+	<tr>
+	<td width="200" align="center"><%= link_to zombie.name, zombie%></td>
+	<td width="200" align="center"><%= zombie.graveyard%></td>
+	<td width="200" align="center"><%= zombie.id%></td>
+	<td width="200" align="center"><%= link_to "Edit", edit_zombie_path(zombie)%></td>
+	<td width="200" align="center"><%= link_to "Delete", zombie, :method => :delete, :confirm => "Are u shure?"%></td>
+</tr>
+<% end %>
+</table>
+<p align="center"><%= link_to "New Zombie", new_zombie_path %></p>

@@ -1,0 +1,10 @@
+<%= params %>
+<h2><%= @zombie.name %></h2>
+<%= @zombie.graveyard %>
+<hr>
+<h3>Tweets:</h3>
+<% @zombie.tweets.each do |tweet|%>
+	<p><%= tweet.status%></p>
+<% end %>
+
+<%= link_to "Add comment", new_tweet_path  %>
