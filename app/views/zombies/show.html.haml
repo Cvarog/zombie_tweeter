@@ -1,0 +1,17 @@
+%h2=@zombie.name
+=@zombie.graveyard
+%hr
+%h3Tweets:
+-@zombie.tweets.each do |tweet|
+	%p 
+		=tweet.status
+	%p
+		=time_ago_in_words tweet.created_at
+	%p
+		=link_to "Delete tweet", [@zombie, tweet], :method => :delete, :confirm => "Are u sure?" 
+=form_for [@zombie, @zombie.tweets.build] do |f|
+	%p
+		=f.text_field :status
+	%p
+		=f.submit "Add tweet"
+=link_to "Back", zombies_path

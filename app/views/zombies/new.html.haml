@@ -1,0 +1,10 @@
+%p Add a new Zombie
+=simple_form_for @zombie do |f|
+	%p
+		= f.label :name
+		= f.text_field :name
+	%p
+		= f.label :graveyard
+		= f.text_field :graveyard
+	%p
+		= f.submit "Add zombie"

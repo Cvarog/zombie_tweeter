@@ -1,0 +1,27 @@
+.navbar
+	.navbar-inner
+		%a.brand{:href => zombies_path} Zombies
+		%ul.nav
+			%li.active
+				%a{:href => new_zombie_path} New Zombie
+			%li
+				%a{:href => "#"} Link
+			%li
+				%a{:href => "#"} Link
+%h1{:align => "center"}>Zombies
+- @zombies.each do |zombie|
+	%div[zombie]
+		%b Name
+		= link_to zombie.name, zombie
+		%br
+		%b Graveyard
+		= zombie.graveyard
+		%br
+		%b Id
+		= zombie.id
+		%br
+		.controls
+		= link_to "Edit", edit_zombie_path(zombie)
+		= link_to "Delete", zombie, :method => :delete, :confirm => "Are u shure?"
+
+/ # %p{:align => "center"}= link_to "New Zombie", new_zombie_path
