@@ -24,4 +24,5 @@
 		= link_to "Edit", edit_zombie_path(zombie)
 		= link_to "Delete", zombie, :method => :delete, :confirm => "Are u shure?"
 
-/ # %p{:align => "center"}= link_to "New Zombie", new_zombie_path
+= link_to "Delete all zombies", :action => "destroy_all" , :method => :delete, :confirm => "Are u shure?"
+

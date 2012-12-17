@@ -1,7 +1,5 @@
 BlogMyself::Application.routes.draw do
-  get "comments/create"
-
-  get "comments/destroy"
+  get "zombies/destroy_all"
   
   resources :zombies do
     resources :tweets

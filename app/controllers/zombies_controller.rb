@@ -26,6 +26,7 @@ class ZombiesController < ApplicationController
 	def destroy
 		@zombie = Zombie.find(params[:id])
 		@zombie.destroy
+		
 		redirect_to zombies_path
 	end
 
@@ -37,6 +38,11 @@ class ZombiesController < ApplicationController
 	def update
 		@zombie = Zombie.find(params[:id])
 		@zombie.update_attributes(params[:zombie])
+		redirect_to zombies_path
+	end
+
+	def destroy_all
+		Zombie.destroy_all
 		redirect_to zombies_path
 	end
 end
