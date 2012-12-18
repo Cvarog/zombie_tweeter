@@ -1,3 +1,3 @@
-<p>Simple application built after studying the course Rails for Zombies!</p>
-<p>put /zombies to see all zombies</p>
-<p>There u can add Zombie, edit or delete him or all zombies.</p>
+Simple application built after studying the course Rails for Zombies!
+Put /zombies to see all zombies.
+There u can add Zombie, edit or delete him or all zombies.
